@@ -102,11 +102,14 @@ class FileReceiveActivity : AppCompatActivity() {
                 if (it.moveToFirst()) {
                     val nameIndex = it.getColumnIndex("_display_name")
                     if (nameIndex >= 0) {
-                        return@use it.getString(nameIndex)
+                        it.getString(nameIndex)
+                    } else {
+                        null
                     }
+                } else {
+                    null
                 }
-            }
-            uri.lastPathSegment ?: "unknown"
+            } ?: uri.lastPathSegment ?: "unknown"
         } catch (e: Exception) {
             Timber.e(e, "Error getting file name")
             "unknown"
@@ -120,11 +123,14 @@ class FileReceiveActivity : AppCompatActivity() {
                 if (it.moveToFirst()) {
                     val sizeIndex = it.getColumnIndex("_size")
                     if (sizeIndex >= 0) {
-                        return@use it.getLong(sizeIndex)
+                        it.getLong(sizeIndex)
+                    } else {
+                        null
                     }
+                } else {
+                    null
                 }
-            }
-            0L
+            } ?: 0L
         } catch (e: Exception) {
             Timber.e(e, "Error getting file size")
             0L

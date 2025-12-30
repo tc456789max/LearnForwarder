@@ -58,7 +58,7 @@ class MainForegroundService : Service() {
             NOTIFICATION_ID,
             notification,
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
-                android.app.ServiceInfo.FOREGROUND_SERVICE_TYPE_MEDIA_PROJECTION
+                android.content.pm.ServiceInfo.FOREGROUND_SERVICE_TYPE_MEDIA_PROJECTION
             } else {
                 0
             }
@@ -109,7 +109,7 @@ class MainForegroundService : Service() {
         )
         
         return NotificationCompat.Builder(this, CHANNEL_ID)
-            .setSmallIcon(R.drawable.ic_launcher_foreground)
+            .setSmallIcon(R.mipmap.ic_launcher)
             .setContentTitle("Learn Forwarder")
             .setContentText("Service is running...")
             .setContentIntent(pendingIntent)
