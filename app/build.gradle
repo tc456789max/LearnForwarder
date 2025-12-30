@@ -5,6 +5,7 @@ plugins {
 }
 
 android {
+    namespace 'com.example.learnforwarder'
     compileSdk 34
 
     defaultConfig {
