@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Learn Forwarder</string>
+    <string name="notification_listener_label">Learn Forwarder Notification Listener</string>
+    <string name="status_running">Service is running</string>
+    <string name="status_stopped">Service is stopped</string>
+</resources>
